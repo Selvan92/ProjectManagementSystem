@@ -2,7 +2,7 @@
     {
         "first_name": "Dallas",
         "last_name": "Gourley",
-        "employee_contact_number": 01234567,
+        "employee_contact_number": 0,
         "employee_contact_address": "100 Gourely Ave",
         "employee_contact_email": "dallas@gourley.com",
         "employee_department": "admin", 

@@ -8,7 +8,7 @@ class Employees extends Model {}
 
 Employees.init(
     {
-        employee_ID: {
+        employeeID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -79,7 +79,6 @@ Employees.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        underscored: true,
         modelName: "employee",
     },
 );

@@ -8,7 +8,7 @@ class Customers extends Model {}
 
 Customers.init(
     {
-        customer_ID: {
+        customerID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -63,8 +63,7 @@ Customers.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        underscored: true,
-        modelName: "customer",
+        modelName: "customers",
     },
 );
 

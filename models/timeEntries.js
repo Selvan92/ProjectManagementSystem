@@ -8,18 +8,18 @@ class TimeEntries extends Model {}
 
 TimeEntries.init (
     {
-        employee_ID: {
+        employeeID: {
             type: DataTypes.INTEGER,
             references: {
                 model: "employees",
-                key: "employee_ID",
+                key: "employeeID",
             }
         },
-        job_ID: {
+        jobID: {
             type: DataTypes.INTEGER,
             references: {
                 model: "jobs",
-                key: "job_ID",
+                key: "jobID",
             }
         },
         Hours_worked:{
@@ -38,7 +38,6 @@ TimeEntries.init (
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        underscored: true,
         modelName: "timeEntries",
     },
 );

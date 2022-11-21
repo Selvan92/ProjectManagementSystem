@@ -1,9 +1,9 @@
 [
     {
-        // "employee_ID":  ,
+        
         "first_name": "Regan",
         "last_name": "Gourley",
-        "customer_contact_number": 0123456789,
+        "customer_contact_number": 0,
         "customer_contact_address": "400 Gourley ave",
         "customer_contact_email": "regan@gourley.com",
         "userID": 2
