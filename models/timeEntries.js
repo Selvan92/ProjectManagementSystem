@@ -15,11 +15,11 @@ TimeEntries.init (
                 key: "employee_ID",
             }
         },
-        Job_ID: {
+        job_ID: {
             type: DataTypes.INTEGER,
             references: {
                 model: "jobs",
-                key: "Job_ID",
+                key: "job_ID",
             }
         },
         Hours_worked:{

@@ -8,7 +8,7 @@ class Jobs extends Model {}
 
 Jobs.init(
     {
-        Job_ID: {
+        job_ID: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,

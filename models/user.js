@@ -10,7 +10,7 @@ class User extends Model {
 
 User.init(
     {
-        user_ID:{
+        userID:{
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -20,7 +20,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
           },
-          password: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
