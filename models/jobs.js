@@ -8,7 +8,7 @@ class Jobs extends Model {}
 
 Jobs.init(
     {
-        job_ID: {
+        jobID: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -23,26 +23,18 @@ Jobs.init(
                 }
             }
         },
-        customer_ID: {
+        customerID: {
             type: DataTypes.INTEGER,
             references: {
                 model: "customers",
-                key: "customer_ID",
+                key: "customerID",
             }
         },
-        // employee_ID: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: "employees",
-        //         key: "employee_ID",
-        //     }
-        // },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        underscored: true,
         modelName: "jobs",
     },
 );

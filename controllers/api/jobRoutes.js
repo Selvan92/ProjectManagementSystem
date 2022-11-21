@@ -19,8 +19,8 @@ router.delete('/:id', withAuth,async(req,res)=> {
     try {
         const jobData = await Jobs.destroy({
             where:{
-                job_ID: req.params.job_ID,
-                customer_ID: req.session.customer_ID
+                jobID: req.params.jobID,
+                customerID: req.session.customerID
             },
         });
 
