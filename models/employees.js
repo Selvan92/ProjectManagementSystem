@@ -70,7 +70,7 @@ Employees.init(
             type: DataTypes.INTEGER,
             references: {
                 model: "user",
-                key: "User_ID",
+                key: "user_ID",
             }
         },
     },
