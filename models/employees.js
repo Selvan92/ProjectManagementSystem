@@ -15,7 +15,7 @@ Employees.init(
             autoIncrement: true,
         },
         first_name: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 notNull: {
@@ -24,7 +24,7 @@ Employees.init(
             }
         },
         last_name: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 notNull: {
@@ -41,18 +41,18 @@ Employees.init(
             },
         },
         employee_contact_address: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         employee_contact_email:{
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 isEmail: true,
             }
         },
         employee_department:{
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate:{
                 isIn: [['plumbing', 'electrical','carpentary','admin']],
@@ -66,11 +66,12 @@ Employees.init(
             type: DataTypes.INTEGER,
             allowNull:false,
         },
-        user_id: {
+        userID: {
             type: DataTypes.INTEGER,
+            foreignKey: true,
             references: {
                 model: "user",
-                key: "user_ID",
+                key: "userID",
             }
         },
     },
@@ -79,7 +80,7 @@ Employees.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "employees",
+        modelName: "employee",
     },
 );
 

@@ -15,7 +15,7 @@ Customers.init(
             autoIncrement: true,
         },
         first_name: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 notNull: {
@@ -24,7 +24,7 @@ Customers.init(
             }
         },
         last_name: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 notNull: {
@@ -41,21 +41,21 @@ Customers.init(
             },
         },
         customer_contact_address: {
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         customer_contact_email:{
-            type: DataTypes.VARCHAR(100),
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 isEmail: true,
             }
         },
-        user_id: {
+        userID: {
             type: DataTypes.INTEGER,
             references: {
                 model: "user",
-                key: "user_ID",
+                key: "userID",
             }
         },
     },
@@ -64,7 +64,7 @@ Customers.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "customers",
+        modelName: "customer",
     },
 );
 
