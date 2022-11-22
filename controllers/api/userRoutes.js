@@ -11,23 +11,20 @@ router.get('/', async (req,res)=>{
                 model:Customers,
             },
             {
-                model: Employees,
+                model:Employees,
             }
             ]
-        }).then (data => res.status(200).json(data))
+        }).then ((data) => res.status(202).json(data))
     } catch (err){
         res.status(500).json(err);
     }
 });
 
-router.get('/:userID',(req,res)=>{
+router.get('/:userID',async (req,res)=>{
     //find a single user by their userID
     //include associated data from customers or Employees
     try{
-        User.findOne({
-            where:{
-                userID:req.params.userID,
-            },
+        await User.findByPk(req.params.userID, {
             include:[
                 {
                     model: Customers,
@@ -36,7 +33,7 @@ router.get('/:userID',(req,res)=>{
                     model: Employees,
                 }
             ]
-        }).then(data=> res.status(200).json(data))
+        }).then((data)=> res.status(200).json(data))
     } catch (err){
         res.status(500).json(err);
     }
@@ -50,6 +47,52 @@ router.delete('/:userID', (req,res)=>{
                 userID:req.params.userID
             }
         }).then(data=> res.status(200).json(data));
+    } catch(err){
+        res.status(500).json(err);
+    }
+});
+
+//create new user
+router.post('/',(req,res)=>{
+    try {
+        const newUser = req.body;
+        if(newUser){
+            User.create(newUser)
+            .then((data) => res.status(202).json(data));
+        }
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+//destroy user by their userID
+router.delete('/:userID',(req,res)=>{
+    try{
+        User.destroy({
+            where:{
+                userID:req.params.userID,
+            }
+        }).then((data)=>{
+            res.status(200).json(data);
+        })
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
+//update user by their userID
+router.put('/:id', (req,res)=> {
+    try{
+        User.update({
+            userName: req.body.username,
+        },
+        {
+            where:{
+                userID:req.params.userID
+            }
+        }).then ((data)=>{
+            res.status(200).json(data);
+        })
     } catch(err){
         res.status(500).json(err);
     }
