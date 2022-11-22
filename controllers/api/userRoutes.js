@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { User, Customers,Employees,TimeEntries,Jobs } = require('../../models');
 
-router.get('/', async (req,res)=>{
     //find all users from user table
     //include associated information either employees or customers
+router.get('/', async (req,res)=>{
     try{
         await User.findAll({
             include:[
@@ -39,8 +39,8 @@ router.get('/:userID',async (req,res)=>{
     }
 });
 
+//delete user by userID
 router.delete('/:userID', (req,res)=>{
-    //delete user by userID
     try {
         User.destroy({
             where: {
@@ -54,6 +54,12 @@ router.delete('/:userID', (req,res)=>{
 
 //create new user
 router.post('/',(req,res)=>{
+            //req.body should look like this
+        // {
+        //     "username":"peterJ",
+        //     "password":"testpassword3",
+        //     "account_type":"customer"
+        // }
     try {
         const newUser = req.body;
         if(newUser){
@@ -81,7 +87,7 @@ router.delete('/:userID',(req,res)=>{
 });
 
 //update user by their userID
-router.put('/:id', (req,res)=> {
+router.put('/:userID', (req,res)=> {
     try{
         User.update({
             userName: req.body.username,
