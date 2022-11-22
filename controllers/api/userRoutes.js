@@ -1,9 +1,59 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Customers,Employees,TimeEntries,Jobs } = require('../../models');
 
+router.get('/', async (req,res)=>{
+    //find all users from user table
+    //include associated information either employees or customers
+    try{
+        await User.findAll({
+            include:[
+            {
+                model:Customers,
+            },
+            {
+                model: Employees,
+            }
+            ]
+        }).then (data => res.status(200).json(data))
+    } catch (err){
+        res.status(500).json(err);
+    }
+});
 
+router.get('/:userID',(req,res)=>{
+    //find a single user by their userID
+    //include associated data from customers or Employees
+    try{
+        User.findOne({
+            where:{
+                userID:req.params.userID,
+            },
+            include:[
+                {
+                    model: Customers,
+                },
+                {
+                    model: Employees,
+                }
+            ]
+        }).then(data=> res.status(200).json(data))
+    } catch (err){
+        res.status(500).json(err);
+    }
+});
 
-
+router.delete('/:userID', (req,res)=>{
+    //delete user by userID
+    try {
+        User.destroy({
+            where: {
+                userID:req.params.userID
+            }
+        }).then(data=> res.status(200).json(data));
+    } catch(err){
+        res.status(500).json(err);
+    }
+});
 
 router.post('/login', async (req,res)=>{
     try{
@@ -25,7 +75,7 @@ router.post('/login', async (req,res)=>{
         }
         
         req.session.save(()=>{
-            req.session.userid = userData.userID;
+            req.session.userID = userData.userID;
             req.session.validPassword = true;
             res.json({user: userData, message:'You are now logged in'});
         });
