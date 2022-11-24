@@ -3,6 +3,7 @@ const Employees = require('./employees');
 const Customers = require('./customers');
 const Jobs = require('./jobs');
 const TimeEntries = require('./timeEntries');
+const { update } = require('./user');
 
 //user has one employee
 User.hasOne(Employees,{
@@ -44,7 +45,7 @@ Jobs.hasMany(TimeEntries,{
 //timeEntries has one employee
 TimeEntries.belongsTo(Employees,{
     foreignKey: "employeeID"
-});
+    });
 
 //timeEntries has one job
 TimeEntries.belongsTo(Jobs,{
