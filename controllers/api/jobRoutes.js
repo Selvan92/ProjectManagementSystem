@@ -58,12 +58,12 @@ router.get('/', async(req,res)=>{
             }
         });
 
-    //creat new time entry
+    //create new job entry
     router.post('/', (req,res)=>{
         //     /* req.body should look like this...
         //     {
         //          "customerID":1,
-        //          "job_description": 1,
+        //          "job_description": "This is a test job",
         //     }
         //   */
             try{
