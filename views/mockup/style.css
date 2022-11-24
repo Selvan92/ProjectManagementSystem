@@ -1,0 +1,64 @@
+#background_image
+{
+    position:fixed;
+    display:inline-block;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:-1;
+    background-color:rgba(0,0,0,0.5);
+    background-image:url(/public/images/background_image.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+#btn-group button 
+{
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+#img_src
+{
+    position:relative;
+    display:inline-block;
+    width:200px;
+    height:200px;
+    background-image:url(/public/images/sign_on_logo.png);
+    background-position: center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+#logo
+{
+    position:relative;
+    display:inline-block;
+    width:200px;
+    height:200px;
+    background-image:url(/public/images/logo.webp);
+    background-position: center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+#logon_form
+{
+    position:relative;
+    display:inline-block;
+    width:100%;
+    max-width: 600px;
+    border: 1px solid #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.4);
+    color: #ffffff
+}
+#main_header
+{
+    position:absolute;
+    top:0px;
+    left:0px;
+}

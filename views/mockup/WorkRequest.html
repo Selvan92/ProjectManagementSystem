@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- load handlebars js -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <!-- load bootstrap js -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <!-- load jquery js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../assets/js/landing.js"></script>
+        <script src="/js/logout.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Project Management System</title>
+    </head>
+    <body>
+        <header id="main_header">
+            <div id="logo">
+            </div>
+        </header>
+        <div id="background_image">
+        </div>
+        <div class="container-fluid text-center">
+            <div class="comparison m-5">
+                <div class="log">
+                    <div class="flex-column justify-space-around">
+                        <header class="display-flex justify-space-between align-center p-2">
+                            <h3>Project Management System</h3>
+                        </header>
+                            <div main class="container container-fluid" style='margin-left:500px'>
+                                <div id="logon_form" position="right">
+                                    <!-- 3 buttons  -->
+                                    <div class="btn-group">
+                                        <div class="col d-flex justify-content-center">
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Home Page</button>
+                                        <button type="button" class="btn btn-primary">Customer Portal</button>
+                                        <button type="button" class="btn btn-primary">Logout</button >  
+                                       
+                                    </div>
+                                </div>
+                            </div>    
+                                    <form>
+                                        <div class="card">
+                                            <img src="(/public/images/sign_on_logo.png)" class="card-img-top" alt="url(/public/images/sign_on_logo.png)"/>
+                                            <div class="card-body">
+                                              <h5 class="card-title">Card title</h5>
+                                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                              <a href="#!" class="btn btn-primary">Button</a>
+                                            </div>
+                                          </div>
+                                          $(function () {
+                                            // Get the text for the Handlebars template from the script element.
+                                            var templateText = $("#tableTemplate").html();
+                                            
+                                            // Compile the Handlebars template.
+                                            var tableTemplate = Handlebars.compile(templateText);
+                                          
+                                              // Define an array of people.
+                                            var people = [
+                                              { "Id": 1, "First Name": "Anthony", "Last Name": "Nelson", "Age": 25 },
+                                              { "Id": 2, "First Name": "Helen", "Last Name": "Garcia", "Age": 32 },
+                                              { "Id": 3, "First Name": "John", "Last Name": "Williams", "Age": 48 }
+                                            ];
+                                            
+                                            // Evaluate the template with an array of people and set the HTML
+                                            // for the people table.
+                                            $("#people").html(tableTemplate({ array: people }));
+                                            
+                                            // Deine an array of smart phones.
+                                            var smartPhones = [
+                                                { "Manufacturer": "Apple", "Phone": "iPhone", "Operating System": "iOS" },
+                                              { "Manufacturer": "Samsung", "Phone": "Galaxy", "Operating System": "Android" },
+                                              { "Manufacturer": "Nokia", "Phone": "Lumia", "Operating System": "Windows" }
+                                            ];
+                                            
+                                            // Evaluate the same table template with an array of smart phoes and set the HTML
+                                            // for the smartphones table.
+                                            $("#smartphones").html(tableTemplate({ array: smartPhones }));
+                                          });
+                                </form>
+                            </div>
+                        </main>
+                        <footer id="footer">
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- handlbar used for dynamic content -->
+        <!-- template -->
+		<script id="template_favourite_foods" type="text/x-handlebars-template">
+			<p id="favourite_food">
+				My favourite food is {{favourite_food}} which I started enjoying at age {{age}}.
+			<p>
+		</script>
+		<script type="text/javascript">
+			
+			//get contents of html from template
+			var template = document.getElementById("template_favourite_foods").innerHTML;
+
+			//compile the template data into a function
+			var templateScript = Handlebars.compile(template);
+
+			var context = { 
+				"favourite_food" : "Pasta", 
+				"age" : "30" 
+			};
+
+			//build handlebars object
+			var html = templateScript(context);
+
+			//insert the HTML code into the page
+			document.getElementById("footer").innerHTML = html;
+			
+		</script>
+
+    </body>
+</html>
