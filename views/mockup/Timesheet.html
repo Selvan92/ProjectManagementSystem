@@ -14,6 +14,7 @@
         <script src="/js/logout.js"></script>
         <link rel="stylesheet" href="style.css">
         <title>Project Management System</title>
+        
     </head>
     <body>
         <header id="main_header">
@@ -32,30 +33,42 @@
                         <main class="container container-fluid mt-5">
                             <div id="logon_form">
                                 <form>
-                                            <!-- 2 column grid layout for inline styling -->
-                                 <div  class="row mb-4">
-                                            <div class="col d-flex justify-content-center">
-                                            </div>
+                                    <div main class="container container-fluid" style='margin-left:500px'>
+                                        <div id="logon_form" position="right">
+                                     <!-- 3 buttons  -->
+                                     <div class="btn-group">
+                                    </div>
+                                   
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Home Page</button>
+                                        <button type="button" class="btn btn-primary">Work Order Page</button>
+                                        <button type="button" class="btn btn-primary">Logout</button >  
+                                       
+                                    </div>
                                 </div>
-                                        <div class="col">
-                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary">Work Orders</button>
-                                        </div>
-                                         <div class="col">
-                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary">Time Management</button>
-                                        </div>
-                                        <div class="col">
-                                        <button style='margin-bottom:30px' type="button" class="btn btn-primary">Logout</button>
-                                        </div>  
-                                </form>
-                            </div>
-                        </main>
-                        <footer id="footer">
-                        </footer>
-                    </div>
+                            </form>
+                        </div>
+                    </main>
+                    <footer id="footer">
+                        <div main class="container container-fluid" style='margin-right:500px'>
+                            <div id="logon_form" position="right">
+                         <!-- 2 buttons  -->
+                         <div class="btn-group">
+                         </div>
+                       
+                        <div class="col">
+                            <button type="button" class="btn btn-primary">New</button>
+                            <button type="button" class="btn btn-primary">open</button> 
+                        </div>      
+                    </footer>
                 </div>
             </div>
         </div>
-        <!-- handlbar used for dynamic content -->
+    </div>
+
+
+
+    <!-- handlbar used for dynamic content -->
         <!-- template -->
 		<script id="template_favourite_foods" type="text/x-handlebars-template">
 			<p id="favourite_food">
@@ -84,4 +97,4 @@
 		</script>
 
     </body>
-</html>
+</html>                                 
