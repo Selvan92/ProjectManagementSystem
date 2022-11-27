@@ -1,46 +1,32 @@
-const newFormHandler = async (event) => {
+const newFormHandlerWO = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('#customer-id').value.trim();
-    const jobDescription = document.querySelector('#job-description').value.trim();
+    const jobid = document.querySelector('#job-id').value.trim();
+    const employeeid = document.querySelector('#employee-id').value.trim();
+    const hourworked = document.querySelector('#hours-worked').value.trim();
+    const dateworked = document.querySelector('#date-worked').value.trim();
+
     
-    if (username&&jobDescription) {
-        const response = await fetch ('/api/jobs', {
+    if (jobid && employeeid && hourworked && dateworked) {
+        const response = await fetch ('/api/time', {
             method: 'POST',
-            body: JSON.stringify({username,jobDescription}),
+            body: JSON.stringify({jobid,employeeid,hourworked,dateworked}),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
 
         if (response.ok){
-            document.location.replace('/user');
+            document.location.replace('/user'); //we need to render the workrequest list page here, need to change the route,not /user
         } else {
-            alert('Failed to create new job request');
+            alert('Failed to enter the Work Order details request');
         }
     }
 };
 
-const delButtonHandler = async(event) => {
-    if (event.target.hasAttribute('data-id')){
-        const id = event.target.hasAttribute('data-id');
 
-        const response = await fetch(`/api/jobs/${id}`,{
-            method: 'DELETE',
-        });
-
-        if(response.ok) {
-            document.location.replace('/user');
-        } else {
-            alert('Failed to deleted job');
-        }
-    }
-}
 
 document
-    .querySelector('.new-job-form')
-    .addEventListener('submit', newFormHandler);
+    .querySelector('.new-WO-form')
+    .addEventListener('submit', newFormHandlerWO);
 
-document
-    .querySelector('.job-list')
-    .addEventListener('click',delButtonHandler);
