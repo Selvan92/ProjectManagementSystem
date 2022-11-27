@@ -37,7 +37,7 @@ router.get('/user', withAuth, async (req, res) => {
   
       const user = userData.get({ plain: true });
   
-      res.render('profile', {
+      res.render('WorkRequest', {
         ...user,
         logged_in: true
       });
