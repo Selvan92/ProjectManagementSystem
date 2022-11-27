@@ -8,7 +8,7 @@
     <div class="col-md-6">
       <h3>Create a New Work Request:</h3>
   
-      <form class="form new-project-form">
+      <form class="form new-job-form">
         <div class="form-group">
           <label for="customer-id">Customer name:</label>
           <input class="form-input" type="text" id="customer-id" name="customer-id" />
@@ -24,17 +24,17 @@
       </form>
     </div>
   
-    {{#if projects.length}}
-    <div class="col-md-6 project-list">
+    {{#if jobs.length}}
+    <div class="col-md-6 job-list">
       <h3>Current Request:</h3>
   
-      {{#each projects as |project|}}
+      {{#each jobs as |jobs|}}
       <div class="row mb-2">
         <div class="col-md-8">
-          <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+          <h4><a href="/jobs/{{jobs.jobId}}">{{jobs.job_description}}</a></h4>
         </div>
         <div class="col-md-4">
-          <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+          <button class="btn btn-sm btn-danger" data-id="{{jobs.jobid}}">DELETE</button>
         </div>
       </div>
       {{/each}}

@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-auto">
+      <h2>Welcome, {{name}}!</h2>
+    </div>
+  </div>
+
+      {{#if jobs.length}}
+    <div class="col-md-6 job-list">
+      <h3>Current Request:</h3>
+  
+      {{#each jobs as |jobs|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/jobs/{{jobs.jobId}}">{{jobs.job_description}}</a></h4>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{jobs.jobid}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+  
+  <script src="./js/WorkRequest.js"></script>
