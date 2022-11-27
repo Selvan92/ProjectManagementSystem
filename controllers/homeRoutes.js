@@ -7,22 +7,53 @@ const withAuth =require('../utils/auth');
   res.render('homepage')
 })
 
-    //find all users from user table
+    //find all jobs rend listing of Jobs
     //include associated information either employees or customers
-    router.get('/users/:id', async (req,res)=>{
+    router.get('/jobs', async (req,res)=>{
       try{
-          const usersData = await User.findAll({});
-          
-          const users = usersData.map((user)=>user.get({plain:true}));
-          
-          res.render('userhomepage',{users});
+          const jobsData = await Jobs.findAll({
+            include:[
+              {
+                  model: Customers,
+              },
+              {
+                  model: TimeEntries,
+              },
+          ]
+          });
+          const job = jobsData.map((jobs)=>jobs.get({plain:true}));
+          console.log(job);
+          res.render('jobListing',{job});
       } catch (err){
           console.log(err);
           res.status(500).json(err);
       }
   });
 
-  router.get('/:userID',async (req,res)=>{
+    //find all timeentries render listing of time entries
+    //include associated information either employees or customers
+    router.get('/timeRecords', async (req,res)=>{
+      try{
+          const timeData = await TimeEntries.findAll({
+            include:[
+              {
+                  model: Employees,
+              },
+              {
+                  model: Jobs,
+              },
+          ]
+          });
+          const time = timeData.map((timeRecords)=>timeRecords.get({plain:true}));
+          console.log(time);
+          res.render('timeListing',{time});
+      } catch (err){
+          console.log(err);
+          res.status(500).json(err);
+      }
+  });
+
+  router.get('/users/:userID',async (req,res)=>{
     //find a single user by their userID
     //include associated data from customers or Employees
     try{
@@ -48,6 +79,7 @@ const withAuth =require('../utils/auth');
       res.status(500).json(err);
   }
   });
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/user', withAuth, async (req, res) => {
