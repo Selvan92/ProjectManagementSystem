@@ -14,8 +14,13 @@
         <script src="/js/logout.js"></script>
         <link rel="stylesheet" href="style.css">
         <title>Project Management System</title>
+<<<<<<< HEAD
     </head>
     <body>
+=======
+    </head>   
+     <body>
+>>>>>>> 6e1ea8c8530c751e778218195061f318c9b57544
         <header id="main_header">
             <div id="logo">
             </div>
@@ -27,14 +32,12 @@
                 <div class="log">
                     <div class="flex-column justify-space-around">
                         <header class="display-flex justify-space-between align-center p-2">
-                            <h3>Project Management System</h3>
+                            <h1>Project Management System</h1>
                         </header>
                             <div main class="container container-fluid" style='margin-left:500px'>
                                 <div id="logon_form" position="right">
                                     <!-- 3 buttons  -->
                                     <div class="btn-group">
-                                        <div class="col d-flex justify-content-center">
-                                        </div>
                                     </div>
                                    
                                     <div class="col">
@@ -44,45 +47,61 @@
                                        
                                     </div>
                                 </div>
-                            </div>    
+                            </div> 
+                            <!-- customer profile picture and information -->  
                                     <form>
-                                        <div class="card">
-                                            <img src="(/public/images/sign_on_logo.png)" class="card-img-top" alt="url(/public/images/sign_on_logo.png)"/>
-                                            <div class="card-body">
-                                              <h5 class="card-title">Card title</h5>
-                                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                              <a href="#!" class="btn btn-primary">Button</a>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                                    <img src="url(/public/images/logo.webp)" class="img-fluid"/>
+                                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Customer Profile</h5>
+                                                                <p class="card-text">customer name</p>
+                                                                <p class="card-text">customer ID</p>
+                                                                <a href="#!" class="btn btn-primary">Edit Profile</a>
+<<<<<<< HEAD
+                                                                
+=======
+                                                            </div>    
+>>>>>>> 6e1ea8c8530c751e778218195061f318c9b57544
+                                                    </div>
+                                                </div>        
                                             </div>
-                                          </div>
-                                          $(function () {
-                                            // Get the text for the Handlebars template from the script element.
-                                            var templateText = $("#tableTemplate").html();
-                                            
-                                            // Compile the Handlebars template.
-                                            var tableTemplate = Handlebars.compile(templateText);
+                                        </div>
+                                    </form>
+                                          <h2>Handlebars template to populate a table</h2>
+
                                           
-                                              // Define an array of people.
-                                            var people = [
-                                              { "Id": 1, "First Name": "Anthony", "Last Name": "Nelson", "Age": 25 },
-                                              { "Id": 2, "First Name": "Helen", "Last Name": "Garcia", "Age": 32 },
-                                              { "Id": 3, "First Name": "John", "Last Name": "Williams", "Age": 48 }
-                                            ];
-                                            
-                                            // Evaluate the template with an array of people and set the HTML
-                                            // for the people table.
-                                            $("#people").html(tableTemplate({ array: people }));
-                                            
-                                            // Deine an array of smart phones.
-                                            var smartPhones = [
-                                                { "Manufacturer": "Apple", "Phone": "iPhone", "Operating System": "iOS" },
-                                              { "Manufacturer": "Samsung", "Phone": "Galaxy", "Operating System": "Android" },
-                                              { "Manufacturer": "Nokia", "Phone": "Lumia", "Operating System": "Windows" }
-                                            ];
-                                            
-                                            // Evaluate the same table template with an array of smart phoes and set the HTML
-                                            // for the smartphones table.
-                                            $("#smartphones").html(tableTemplate({ array: smartPhones }));
-                                          });
+                                          <!-- The script element is used to define the Handlebars template -->
+                                          <script type="text/x-handlebars-template" id="tableTemplate">
+                                          <table>
+                                          <thead>
+                                            <tr>
+                                              {{#each array.[0]}}
+                                                <th>{{@key}}</th>
+                                              {{/each}}
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            {{#each array}}
+                                              <tr>
+                                                  {{#each this}}
+                                                  <td>{{this}}</td>
+                                                {{/each}}
+                                              </tr>
+                                            {{/each}}
+                                          </tbody>
+                                          </table>
+                                          </script>
+<<<<<<< HEAD
+                                         
+=======
+                                          
+>>>>>>> 6e1ea8c8530c751e778218195061f318c9b57544
+                                          <div style="position: absolute;bottom: 5px;">
+                                          Read about this Fiddle at: <a href="http://jsdev.wikidot.com/howto:12" target="_blank">How To: Handlebars - Create Table element</a>
+                                          </div>    
                                 </form>
                             </div>
                         </main>
@@ -92,6 +111,10 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 6e1ea8c8530c751e778218195061f318c9b57544
         <!-- handlbar used for dynamic content -->
         <!-- template -->
 		<script id="template_favourite_foods" type="text/x-handlebars-template">
