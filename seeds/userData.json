@@ -2,11 +2,11 @@
     {
         "username": "testemployee1",
         "password": "password1",
-        "account_type": "employee"
+        "isEmployee": true
     },
     {
         "username": "testcustomer1",
         "password": "password2",
-        "account_type": "customer"
+        "isEmployee": false
     }
 ]

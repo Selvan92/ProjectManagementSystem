@@ -15,10 +15,15 @@ const loginFormHandler = async (event) => {
 
         if(response.ok){
             //If the login is accepted, the browser will be directed to the the profile page
-            document.location.replace('/profile');
+            document.location.replace('/user');
         } else {
             alert(response.statusText);
         }
     }
 };
+
+document
+  .querySelector('.logon_form')
+  .addEventListener('submit', loginFormHandler);
+
 
