@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
         });
 
         if (response.ok){
-            document.location.replace('/profile');
+            document.location.replace('/user');
         } else {
             alert('Failed to create new job request');
         }
@@ -30,7 +30,7 @@ const delButtonHandler = async(event) => {
         });
 
         if(response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/user');
         } else {
             alert('Failed to deleted job');
         }
