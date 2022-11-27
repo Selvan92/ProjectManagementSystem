@@ -27,12 +27,9 @@ User.init(
               len: [6],
             },
         },
-        account_type: {
-            type: DataTypes.STRING,
+        isEmployee: {
+            type: DataTypes.BOOLEAN,
             allowNull: false,
-            validate:{
-                isIn: [['customer', 'employee']],
-            },
             },
     },
     {
@@ -44,7 +41,6 @@ User.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        
         modelName: "user",
     }
 );

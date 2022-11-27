@@ -58,7 +58,7 @@ router.post('/',(req,res)=>{
         // {
         //     "username":"peterJ",
         //     "password":"testpassword3",
-        //     "account_type":"customer"
+        //     "employee":true
         // }
     try {
         const newUser = req.body;

@@ -35,7 +35,6 @@ Jobs.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-       
         modelName: "jobs",
     },
 );
