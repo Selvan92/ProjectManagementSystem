@@ -5,7 +5,8 @@
 
   A project system that allows both customers and staff monitor jobs, time and other reporting as required. The system uses node.js, express, handlebars, sequilize and bcrypt to capture, store, protect and retrieve information.
 
-
+  [A presentation of application can be viewed here](https://docs.google.com/presentation/d/1fRusG5oC_uFXYz9MCrhMYzfK1mBbNAjgPDhGtaMtbAU/edit#slide=id.g91539a1ac0_0_161)
+  
   [A deployed version can be viewed here.](n/a)
 
   [The repository can be viewed here.](https://github.com/dgourley84/ProjectManagementSystem)
