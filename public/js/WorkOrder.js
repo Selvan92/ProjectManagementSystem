@@ -4,7 +4,7 @@ const newFormHandlerWO = async (event) => {
     const jobID = document.querySelector('input[name="job-id"]').value.trim();
     const employeeID = document.querySelector('input[name="employee-id"]').value.trim();
     const Hours_worked = document.querySelector('input[name="hours-worked"]').value.trim();
-    const Date_worked = document.querySelector('input[type="date"').value.trim();
+    const Date_worked = document.querySelector('input[type="date"]').value.trim();
 
     console.log(jobID);
     

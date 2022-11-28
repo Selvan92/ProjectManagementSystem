@@ -1,3 +1,11 @@
+a {
+    color:#ffffff;
+}
+
+#title {
+    color: white; /* White text */
+}
+
 #logon_form
 {
     position:relative;
@@ -16,7 +24,7 @@
     left:0px;
     z-index:-1;
     background-color:rgba(0,0,0,0.5);
-    background-image:url(images/background_image.jpg);
+    background-image:url(/images/background_image.jpg);
     background-position: center;
     background-size:cover;
     background-repeat:no-repeat;
@@ -42,7 +50,7 @@
       top:0px;
       left:0px;
       background-color:rgba(0,0,0,0.5);
-      background-image:url(/public/images/logo.webp);
+      background-image:url(/images/logo.webp);
       background-position: center;
       background-size:cover;
       background-repeat:no-repeat;
@@ -55,22 +63,22 @@
     display:inline-block;
     width:200px;
     height:200px;
-    background-image:url(/public/images/sign_on_logo.png);
+    background-image:url(/images/sign_on_logo.png);
     background-position: center;
     background-size:contain;
     background-repeat:no-repeat;
 }
-#logo
+/* #logo
 {
     position:relative;
     display:inline-block;
     width:200px;
     height:200px;
-    background-image:url(/public/images/logo.webp);
+    background-image:url(/images/logo.webp);
     background-position: center;
     background-size:contain;
     background-repeat:no-repeat;
-}
+} */
 
 #logo_form
 

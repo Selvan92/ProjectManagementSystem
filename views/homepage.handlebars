@@ -1,24 +1,11 @@
 
-        <header id="main_header">
-            <div id="logo">
-            </div>
-        </header>
-        <div id="background_image">
-        </div>
-        <div class="container-fluid text-center">
-            <div class="comparison m-5">
-                <div class="log">
-                    <div class="flex-column justify-space-around">
-                        <header class="display-flex justify-space-between align-center p-2">
-                            <h3>Project Management System</h3>
-                        </header>
                         <main class="container container-fluid mt-5">
-                            <div id="logon_form">
+                            <div id="logon_form" class="logon_form">
                                 <form>
                                     <!-- Email input -->
                                     <div class="form-outline mb-4">
 
-                                    <input type="username" id="username-login" class="form-control" placeholder="Username" />
+                                    <input type="text" id="username-login" class="form-control" placeholder="UserID" />
 
                                     <!-- <label class="form-label" for="form2Example1">Email address</label> -->
                                     </div>
@@ -31,37 +18,33 @@
                                 
                                     <!-- 2 column grid layout for inline styling -->
                                     <div class="row mb-4">
-                                    <div class="col d-flex justify-content-center">
+                                    {{!-- <div class="col d-flex justify-content-center">
                                         <!-- Checkbox -->
                                         <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
                                         <label class="form-check-label" for="form2Example31"> Remember me </label>
                                         </div>
                                     </div>
-                                
-                                    <div class="col">
+                                 --}}
+                                    {{!-- <div class="col">
                                         <!-- Simple link -->
                                         <a href="#!">Forgot password?</a>
-                                    </div>
+                                    </div> --}}
                                     </div>
                             
                                     <!-- Submit button -->
-                                    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
                                     
-                                    <!-- Sign up button -->
-                                    <button type="button" class="btn btn-primary btn-block mb-4">Sign up</button>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                                    
+                                    {{!-- <!-- Sign up button -->
+                                    <button type="button" class="btn btn-primary btn-block mb-4">Sign up</button> --}}
                                 
                                     <!-- Register buttons -->
-                                    <div class="text-center">
+                                    {{!-- <div class="text-center">
                                     <p>Not a member? <a href="#!">Register</a></p>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </main>
-                        <footer id="footer">
-                        </footer>
-                    </div>
-                </div>
-            </div>
-        </div>
-   <script src="./js/login.js"></script>
+                       
+   <script src="./js/login.js" defer="defer"></script>

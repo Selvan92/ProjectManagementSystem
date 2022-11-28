@@ -1,9 +1,11 @@
 {{#each time as |timeRecord|}}
-<div class="card">
-    <div class="card-header">
-        <p>Employee number: {{timeRecord.employeeID}}</p>
+<div class="col-sm-6">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Employee number: {{timeRecord.employeeID}}</h5>
+    <p class="card-text">Job number:{{timeRecord.jobID}} = {{timeRecord.Hours_worked}}hours</p>
     </div>
-        <p class="card-body">{{timeRecord.Hours_worked}}hours</p>
-        <p class="card-body">Job number:{{timeRecord.jobID}}</p>
+</div>
 </div>
 {{/each}}
+
