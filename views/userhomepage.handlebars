@@ -8,10 +8,13 @@
                                             </div>
                                 </div>
                                         <div class="col">
-                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary">Work Request</button>
+                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary work-request"><a href="/workRequest">Work request</a></button>
                                         </div>
                                          <div class="col">
-                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary">Work Orders</button>
+                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary work-orders"><a href="/jobs">Work Orders</a></button>
+                                        </div>
+                                        <div class="col">
+                                            <button style='margin-bottom:30px'type="button" class="btn btn-primary time-entries"><a href="/timeEntry">Time Entry</a></button>
                                         </div>
                                         <div class="col">
                                         <button style='margin-bottom:30px' type="button" class="btn btn-primary">Logout</button>
@@ -19,6 +22,8 @@
                                 </form>
                             </div>
                         </main>
+
+
 
 {{else}}
                         <main class="container container-fluid mt-5">
@@ -31,7 +36,7 @@
                                     </div>
                                 </div>
                               <div class="col">
-                                <button style='margin-bottom:30px'type="button" class="btn btn-primary">Work request</button>
+                                <button style='margin-bottom:30px'type="button" class="btn btn-primary work-request"><a href="/workRequest">Work request</a></button>
                               </div>
                               <div class="col">
                                 <button style='margin-bottom:30px'type="button" class="btn btn-primary">Invoices</button>
@@ -41,5 +46,7 @@
                               </div>  
                             </form>
                         </main>
+                        
+                        
 {{/if}}
 

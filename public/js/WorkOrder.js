@@ -1,25 +1,26 @@
 const newFormHandlerWO = async (event) => {
     event.preventDefault();
 
-    const jobid = document.querySelector('#job-id').value.trim();
-    const employeeid = document.querySelector('#employee-id').value.trim();
-    const hourworked = document.querySelector('#hours-worked').value.trim();
-    const dateworked = document.querySelector('#date-worked').value.trim();
+    const jobID = document.querySelector('input[name="job-id"]').value.trim();
+    const employeeID = document.querySelector('input[name="employee-id"]').value.trim();
+    const Hours_worked = document.querySelector('input[name="hours-worked"]').value.trim();
+    const Date_worked = document.querySelector('input[type="date"').value.trim();
 
+    console.log(jobID);
     
-    if (jobid && employeeid && hourworked && dateworked) {
+    if (jobID&&employeeID&&Hours_worked&&Date_worked) {
         const response = await fetch ('/api/time', {
             method: 'POST',
-            body: JSON.stringify({jobid,employeeid,hourworked,dateworked}),
+            body: JSON.stringify({jobID,employeeID,Hours_worked,Date_worked}),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
 
         if (response.ok){
-            document.location.replace('/user'); //we need to render the workrequest list page here, need to change the route,not /user
+            document.location.replace('/timeRecords');
         } else {
-            alert('Failed to enter the Work Order details request');
+            alert('Failed to create new time entry');
         }
     }
 };
