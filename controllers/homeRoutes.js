@@ -8,7 +8,7 @@ const withAuth =require('../utils/auth');
 })
 
 router.get('/workRequest', function(req,res){
-  res.render('workRequest')
+  res.render('WorkRequest')
 })
 
 router.get('/timeEntry', function(req,res){
@@ -84,6 +84,7 @@ router.get('/timeEntry', function(req,res){
           const user = dbUserData.get({plain:true});
           console.log(user);
           res.header("Access-Control-Allow-Origin", '*');
+
           res.render('userhomepage',{user});
     })} catch (err){
       res.status(500).json(err);

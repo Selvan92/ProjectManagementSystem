@@ -2,6 +2,7 @@
 // Dependencies
 const express = require('express');
 const exphbs = require('express-handlebars');
+
 // Import express-session
 const session = require('express-session');
 const helpers = require('./utils/helpers');
@@ -32,6 +33,7 @@ app.use(session(sess));
 // Set Handlebars as the default template engine.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 
 
 
