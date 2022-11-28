@@ -1,9 +1,11 @@
 {{#each job as |jobs|}}
-<div class="card">
-    <div class="card-header">
-        <p>Posted by {{jobs.customerID}}</p>
+<div class="col-sm-6">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">{{jobs.job_description}}</h5>
+    <p class="card-text">requested by: {{jobs.customer.first_name}},{{jobs.customerID}}</p>
     </div>
-        <p class="card-body">{{jobs.job_description}}</p>
-        <p class="card-body">{{jobs.customer.first_name}}</p>
+</div>
 </div>
 {{/each}}
+
