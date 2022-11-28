@@ -13,13 +13,18 @@ const hbs = exphbs.create({helpers});
 
 // Sets up the Express App
 const app = express();
-let PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Set up sessions
 const sess = {
   secret: 'Super secret secret',
+  cookie: { maxAge: 300000 },
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+      db: sequelize
+  })
 };
 
 app.use(session(sess));
