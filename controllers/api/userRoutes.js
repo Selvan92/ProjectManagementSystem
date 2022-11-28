@@ -106,6 +106,8 @@ router.put('/:userID', (req,res)=> {
 
 
 router.post('/login', (req, res) => {
+    res.json({ user: dbUserData, message: "You are now logged in!" });
+    return;
     User.findOne({
       where: {
         userID: req.body.userID,
