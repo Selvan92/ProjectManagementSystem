@@ -7,6 +7,15 @@ const withAuth =require('../utils/auth');
   res.render('homepage')
 })
 
+router.get('/workRequest', function(req,res){
+  res.render('workRequest')
+})
+
+router.get('/timeEntry', function(req,res){
+  res.render('WorkOrderInput')
+})
+
+
     //find all jobs rend listing of Jobs
     //include associated information either employees or customers
     router.get('/jobs', async (req,res)=>{

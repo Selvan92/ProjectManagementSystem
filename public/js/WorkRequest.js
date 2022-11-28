@@ -1,20 +1,23 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('#customer-id').value.trim();
-    const jobDescription = document.querySelector('#job-description').value.trim();
+    const customerID = document.querySelector('#customer-id').value.trim();
+    const job_description = document.querySelector('#job-description').value.trim();
+
+    console.log(customerID);
+    console.log(job_description);
     
-    if (username&&jobDescription) {
+    if (customerID&&job_description) {
         const response = await fetch ('/api/jobs', {
             method: 'POST',
-            body: JSON.stringify({username,jobDescription}),
+            body: JSON.stringify({customerID,job_description}),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
 
         if (response.ok){
-            document.location.replace('/user');
+            document.location.replace('/jobs');
         } else {
             alert('Failed to create new job request');
         }
