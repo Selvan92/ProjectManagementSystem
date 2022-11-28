@@ -55,7 +55,8 @@ router.get('/timeEntry', function(req,res){
           });
           const time = timeData.map((timeRecords)=>timeRecords.get({plain:true}));
           console.log(time);
-          res.render('timeListing',{time});
+          res.header("Access-Control-Allow-Origin", '*');
+          res.render('timelisting',{time});
       } catch (err){
           console.log(err);
           res.status(500).json(err);
@@ -84,7 +85,6 @@ router.get('/timeEntry', function(req,res){
           const user = dbUserData.get({plain:true});
           console.log(user);
           res.header("Access-Control-Allow-Origin", '*');
-
           res.render('userhomepage',{user});
     })} catch (err){
       res.status(500).json(err);
