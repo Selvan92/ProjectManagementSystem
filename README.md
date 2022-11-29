@@ -9,7 +9,7 @@
   
   [A deployed version can be viewed here.](https://proj-mgmt-sys.herokuapp.com/)
 
-  [The repository can be viewed here.](https://github.com/dgourley84/ProjectManagementSystem)
+  [The repository can be viewed here.](https://github.com/Selvan92/ProjectManagementSystem)
 
   ---
 ## Contents
